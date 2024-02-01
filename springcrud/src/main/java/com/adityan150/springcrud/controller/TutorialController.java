@@ -86,11 +86,11 @@ public class TutorialController {
 					: tutorial.getDescription();
 			boolean newPublished = updatedTutorial.isPublished();
 
-			updatedTutorial.setTitle(newTitle);
-			updatedTutorial.setDescription(newDescription);
-			updatedTutorial.setPublished(newPublished);
+			tutorial.setTitle(newTitle);
+			tutorial.setDescription(newDescription);
+			tutorial.setPublished(newPublished);
 
-			return new ResponseEntity<>(tutorialRepository.save(updatedTutorial), HttpStatus.OK);
+			return new ResponseEntity<>(tutorialRepository.save(tutorial), HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 		}
