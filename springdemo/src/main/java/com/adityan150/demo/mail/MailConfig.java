@@ -1,8 +1,8 @@
 package com.adityan150.demo.mail;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 
 /*
  * Let's say we have imported a library in our application.
@@ -15,13 +15,13 @@ import org.springframework.context.annotation.Profile;
 public class MailConfig {
 
 	@Bean
-	@Profile("dev")
+	@ConditionalOnProperty(name = "spring.mail.host", havingValue = "foo", matchIfMissing = true)
 	public MailSender mockMailSender() {
 		return new MockMailSender();
 	}
 
 	@Bean
-	@Profile("!dev")
+	@ConditionalOnProperty("spring.mail.host")
 	public MailSender smtpMailSender() {
 		return new SmtpMailSender();
 	}
