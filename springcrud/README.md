@@ -1,6 +1,10 @@
 # Spring Boot CRUD Example
 <hr/>
 
+## * ER diagram
+
+![ER](postman-ss/ER_diag.png)
+
 ## 1. Get All request
 
 ![GET ALL request](postman-ss/GET_ALL.png)
