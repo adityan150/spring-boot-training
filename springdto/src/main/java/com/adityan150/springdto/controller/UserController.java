@@ -3,6 +3,7 @@ package com.adityan150.springdto.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.adityan150.springdto.dto.UserLocationDTO;
@@ -20,6 +21,11 @@ public class UserController {
 	@GetMapping("/users-location")
 	public List<UserLocationDTO> getAllUsersLocatoin() {
 		return userService.getAllUsersLocation();
+	}
+
+	@GetMapping("/users-location/{place}")
+	public List<UserLocationDTO> getUsersWithLocation(@RequestParam String place) {
+		return userService.getUsersWithLocation(place);
 	}
 
 }

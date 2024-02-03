@@ -17,6 +17,10 @@ public class UserService {
 		this.userRepository = userRepository;
 	}
 
+	public List<UserLocationDTO> getUsersWithLocation(String place) {
+		return userRepository.getUsersWithLocation(place);
+	}
+
 	public List<UserLocationDTO> getAllUsersLocation() {
 		return userRepository.findAll().stream().map(this::convertEntityToDto).toList();
 	}

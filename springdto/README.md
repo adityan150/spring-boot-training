@@ -7,3 +7,6 @@
 ## GET request
 
 ![GET](GET.png)
+
+## Native Query Join
+![Native](NativeQueryResult.png)
